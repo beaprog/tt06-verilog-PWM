@@ -32,7 +32,5 @@ module tt_um_Johnson_Counter_wmk7fe (
 		else
             out={~out[7],out[0:7-1]};   
 	end
-
-endmodule
     
 endmodule
