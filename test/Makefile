@@ -33,7 +33,7 @@ endif
 
 # Include the testbench sources:
 VERILOG_SOURCES += $(PWD)/tb.v 
-TOPLEVEL = tb_PWM_Generator_Verilog
+TOPLEVEL = tb
 
 # MODULE is the basename of the Python test file
 MODULE = test
