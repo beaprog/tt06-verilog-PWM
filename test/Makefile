@@ -32,7 +32,7 @@ VERILOG_SOURCES += $(PWD)/gate_level_netlist.v
 endif
 
 # Include the testbench sources:
-VERILOG_SOURCES += $(PWD)/tb_PWM_Generator_Verilog.v 
+VERILOG_SOURCES += $(PWD)/tb.v 
 TOPLEVEL = tb_PWM_Generator_Verilog
 
 # MODULE is the basename of the Python test file
