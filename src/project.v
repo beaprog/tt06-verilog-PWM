@@ -20,6 +20,7 @@ module tt_um_shivam (
   //assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
   assign uio_out = 0;
   assign uio_oe  = 0;
+  assign ui_in[7:2] = 0;
   assign uo_out = PWM_OUT;
 	
  wire slow_clk_enable; // slow clock enable signal for debouncing FFs
