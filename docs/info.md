@@ -1,3 +1,4 @@
+
 <!---
 
 This file is used to generate your project datasheet. Please fill in the information below and delete any unused
@@ -9,12 +10,14 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-This is a Chisel template
+Explain how your project works
+
+We want to design Pluse width Modulation (PWM) with 50MHz input Frequency.
 
 ## How to test
 
-Currently cocotb, shall change to ChiselTest
+We check our design with the hlep of OpenROAD flow script (ORFS).
 
 ## External hardware
 
-non by default
+List external hardware used in your project (e.g. PMOD, LED display, etc), if any
