@@ -14,8 +14,8 @@ project:  # design a Pulse Width Modulation
 pinout:  # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
   # Inputs
   ui[0]: "clk"
-  ui[1]: "increase_duty"
-  ui[2]: "decrease_duty"
+  ui[1]: "ui_in[0]"
+  ui[2]: "ui_in[1]"
   ui[3]: ""
   ui[4]: ""
   ui[5]: ""
