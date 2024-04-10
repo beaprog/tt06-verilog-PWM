@@ -1,42 +1,24 @@
-# Makefile
-# See https://docs.cocotb.org/en/stable/quickstart.html for more info
+/*
+ * Copyright (c) 2024 Your Name
+ * SPDX-License-Identifier: Apache-2.0
+ */
 
-# defaults
-SIM ?= icarus
-TOPLEVEL_LANG ?= verilog
-SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v tt_um_PWM.v
+`define default_netname none
 
-ifneq ($(GATES),yes)
+module tt_um_example (
+    input  wire [7:0] ui_in,    // Dedicated inputs
+    output wire [7:0] uo_out,   // Dedicated outputs
+    input  wire [7:0] uio_in,   // IOs: Input path
+    output wire [7:0] uio_out,  // IOs: Output path
+    output wire [7:0] uio_oe,   // IOs: Enable path (active high: 0=input, 1=output)
+    input  wire       ena,      // will go high when the design is enabled
+    input  wire       clk,      // clock
+    input  wire       rst_n     // reset_n - low to reset
+);
 
-# RTL simulation:
-SIM_BUILD				= sim_build/rtl
-VERILOG_SOURCES += $(addprefix $(SRC_DIR)/,$(PROJECT_SOURCES))
-COMPILE_ARGS 		+= -I$(SRC_DIR)
+  // All output pins must be assigned. If not used, assign to 0.
+  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
+  assign uio_out = 0;
+  assign uio_oe  = 0;
 
-else
-
-# Gate level simulation:
-SIM_BUILD				= sim_build/gl
-COMPILE_ARGS    += -DGL_TEST
-COMPILE_ARGS    += -DFUNCTIONAL
-COMPILE_ARGS    += -DUSE_POWER_PINS
-COMPILE_ARGS    += -DSIM
-COMPILE_ARGS    += -DUNIT_DELAY=\#1
-VERILOG_SOURCES += $(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitives.v
-VERILOG_SOURCES += $(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v
-
-# this gets copied in by the GDS action workflow
-VERILOG_SOURCES += $(PWD)/gate_level_netlist.v
-
-endif
-
-# Include the testbench sources:
-VERILOG_SOURCES += $(PWD)/tb.v 
-TOPLEVEL = tb
-
-# MODULE is the basename of the Python test file
-MODULE = test
-
-# include cocotb's make rules to take care of the simulator setup
-include $(shell cocotb-config --makefiles)/Makefile.sim
+endmodule
