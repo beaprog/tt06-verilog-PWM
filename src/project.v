@@ -21,9 +21,9 @@ module tt_um_shivam (
   assign uio_out = 0;
   assign uio_oe  = 0;
 
-	assign uio_in= increase_duty;
+	assign ui_in= increase_duty;
 	assign ui_in = decrease_duty;
- assign uo_out= PWM_OUT;
+        assign uo_out= PWM_OUT;
 	
  wire slow_clk_enable; // slow clock enable signal for debouncing FFs
  reg[27:0] counter_debounce=0;// counter for creating slow clock enable signals 
