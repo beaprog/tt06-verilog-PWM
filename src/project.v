@@ -21,11 +21,6 @@ module tt_um_shivam (
   assign uio_out = 0;
   assign uio_oe  = 0;
 	
-    tt_um_PWM_Generator_Verilog tt_um_PWM_Generator_Verilog  (
-    .clk(clk),
-	    .ui_increase_duty(ui_in[0]),
-	    .ui_decrease_duty(ui_in[1]),
-.uo_PWM_OUT(uo_out),
-	    
-);
+   
+
 endmodule
