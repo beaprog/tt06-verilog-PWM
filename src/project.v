@@ -20,9 +20,7 @@ module tt_um_shivam (
   //assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
   assign uio_out = 0;
   assign uio_oe  = 0;
-	assign ui_in<= increase_duty;
-	assign ui_in[1]<= decrease_duty;
-  assign uo_out<= PWM_OUT;
+  assign uo_out = PWM_OUT;
 	
  wire slow_clk_enable; // slow clock enable signal for debouncing FFs
  reg[27:0] counter_debounce=0;// counter for creating slow clock enable signals 
@@ -46,11 +44,11 @@ module tt_um_shivam (
  assign slow_clk_enable = counter_debounce == 1 ?1:0;
  // for running simulation -- comment when running on FPGA
  // debouncing FFs for increasing button
- DFF_PWM PWM_DFF1(clk,slow_clk_enable,increase_duty,tmp1);
+	DFF_PWM PWM_DFF1(clk,slow_clk_enable,ui_in[0],tmp1);
  DFF_PWM PWM_DFF2(clk,slow_clk_enable,tmp1, tmp2); 
  assign duty_inc =  tmp1 & (~ tmp2) & slow_clk_enable;
  // debouncing FFs for decreasing button
- DFF_PWM PWM_DFF3(clk,slow_clk_enable,decrease_duty, tmp3);
+	DFF_PWM PWM_DFF3(clk,slow_clk_enable,ui_in[0], tmp3);
  DFF_PWM PWM_DFF4(clk,slow_clk_enable,tmp3, tmp4); 
  assign duty_dec =  tmp3 & (~ tmp4) & slow_clk_enable;
  // vary the duty cycle using the debounced buttons above
