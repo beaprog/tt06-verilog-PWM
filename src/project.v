@@ -48,7 +48,7 @@ module tt_um_shivam (
  DFF_PWM PWM_DFF2(clk,slow_clk_enable,tmp1, tmp2); 
  assign duty_inc =  tmp1 & (~ tmp2) & slow_clk_enable;
  // debouncing FFs for decreasing button
-	DFF_PWM PWM_DFF3(clk,slow_clk_enable,ui_in[0], tmp3);
+	DFF_PWM PWM_DFF3(clk,slow_clk_enable,ui_in[1], tmp3);
  DFF_PWM PWM_DFF4(clk,slow_clk_enable,tmp3, tmp4); 
  assign duty_dec =  tmp3 & (~ tmp4) & slow_clk_enable;
  // vary the duty cycle using the debounced buttons above
