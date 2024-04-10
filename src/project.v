@@ -71,7 +71,7 @@ module tt_um_shivam (
    if(counter_PWM>=9) 
     counter_PWM <= 0;
  end
- assign uo_PWM_OUT = counter_PWM < DUTY_CYCLE ? 1:0;
+ assign PWM_OUT = counter_PWM < DUTY_CYCLE ? 1:0;
 endmodule
 // Debouncing DFFs for push buttons on FPGA
 module DFF_PWM(clk,en,D,Q);
