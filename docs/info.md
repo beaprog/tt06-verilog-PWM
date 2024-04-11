@@ -11,7 +11,7 @@ You can also include images in this folder and reference them in the markdown. E
 ## How it works
 
 We want to design Pulse width Modulation (PWM) with 50MHz input Frequency.
-The Verilog code defines a module named `` responsible for generating a Pulse Width Modulation (PWM) signal. It takes a 50MHz clock input (`clk`) and provides inputs for increasing  (`ui_in[0]`) and decreasing (`ui_in[0]`) the duty cycle. The PWM signal is output through `PWM_OUT` at a frequency of 5MHz.
+The Verilog code defines a module named `tt_um_shivam` responsible for generating a Pulse Width Modulation (PWM) signal. It takes a 50MHz clock input (`clk`) and provides inputs for increasing the assigned pin (`ui_in[0]`) and decreasing the assigned pin (`ui_in[0]`) in the duty cycle. The PWM signal is output through the assigned pin `PWM_OUT` at a frequency of 5MHz.
 
 The code implements debouncing logic for the increase and decrease duty cycle buttons using D flip-flops (`DFF_PWM` modules) to prevent rapid fluctuations due to button bouncing. It also includes counters for generating slow clock enable signals to facilitate debouncing.
 
