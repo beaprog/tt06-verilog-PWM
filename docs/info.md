@@ -18,6 +18,7 @@ The code implements debouncing logic for the increase and decrease duty cycle bu
 The duty cycle can be adjusted by pressing the increase or decrease buttons, which are debounced to ensure reliable operation. The duty cycle can vary from 0% to 90% (in 10% increments), and the PWM signal is generated based on this duty cycle.
 
 Overall, the code provides a flexible and robust PWM signal generator with adjustable duty cycle control.
+
 ## How to test
 
 We check our design with the help of OpenROAD flow script (ORFS).
