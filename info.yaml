@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:  # design a Pulse Width Modulation
   title: "Pulse Width Modulation"  # Project title
-  author: "Shivam Bhardwaj, Sachin Sharma and Dr. Ambika Prasad Shah"  # Your name
+  author: "Shivam Bhardwaj, Sachin Sharma and Ambika Prasad Shah"  # Your name
   discord: "ICResQ Lab"  # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description: "This Verilog module generates a Pulse Width Modulation (PWM) signal with adjustable duty cycle. It utilizes a 50MHz clock input and debounced buttons to increase or decrease the duty cycle, producing a 5MHz PWM output for various applications like motor speed control or LED brightness adjustment."  # One line description of what your project does
   language: "Verilog"  # other examples include SystemVerilog, Amaranth, VHDL, etc
