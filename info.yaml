@@ -3,7 +3,7 @@ project:  # design a Pulse Width Modulation
   title: "Pulse Width Modulation"  # Project title
   author: "Shivam Bhardwaj, Sachin Sharma and Dr. Ambika Prasad Shah"  # Your name
   discord: "ICResQ Lab"  # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description: "Modulates the pulse of input clock"  # One line description of what your project does
+  description: "This Verilog module generates a Pulse Width Modulation (PWM) signal with adjustable duty cycle. It utilizes a 50MHz clock input and debounced buttons to increase or decrease the duty cycle, producing a 5MHz PWM output for various applications like motor speed control or LED brightness adjustment."  # One line description of what your project does
   language: "Verilog"  # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz: 50000000  # Clock frequency in Hz (or 0 if not applicable)
   tiles: "1x1" # How many tiles your design occupies? A single tile is about 167x108 uM. Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
